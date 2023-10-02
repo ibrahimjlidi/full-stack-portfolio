@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Ibrahim Jlidi" description="About Ibrahim Jlidi Lorem Ipsum">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Ibrahim Jlidi at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+							I am a passionate full-stack web developer with 1.5 years of experience in developing and maintaining innovative web solutions. My journey in the world of web development began with a strong educational background and has been enriched by hands-on experience in various professional settings.
+					</p>
+					<p>
+						During my tenure at IOTECH in Medenine, Tunisia, I had the opportunity to collaborate with cross-functional teams, contributing to the design, development, and maintenance of responsive web applications. My role involved creating user interfaces using technologies such as HTML5, CSS3, and React. I also developed and maintained RESTful APIs, ensuring seamless data retrieval and integration with third-party services.
+					</p>
+					<p>
+						Prior to my professional experience, I honed my skills as a junior developer at ITM-BC, where I worked closely with senior developers, gaining proficiency in front-end and back-end technologies like HTML, CSS, JavaScript, and PHP.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>	I pursued a Master's degree in Ingénierie Logicielle et des Connaissances at ISIMED - Institut Supérieur d'Informatique et de Multimédia de Medenine, Tunisia. During my studies, I focused on foundational topics such as data structures, algorithms, software engineering, and web development.
+					</p></p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<ul>
+                        <li>Languages: JavaScript/TypeScript, HTML5, CSS3, PHP</li>
+                        <li>Front-end: Angular , Bootstrap</li>
+                        <li>Back-end: Node.js, Express.js</li>
+                        <li>Databases: mySQL, Postgres</li>
+                        <li>Version Control: Git, GitHub</li>
+                        <li>Testing and Debugging</li>
+                        <li>Responsive Web Design</li>
+                        <li>Problem Solving and Troubleshooting</li>
+                        <li>Team Collaboration and Communication</li>
+                    </ul>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
