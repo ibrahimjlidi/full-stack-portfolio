@@ -9,6 +9,7 @@ import CallToAction from '../components/CallToAction.astro';
 import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
+import IconPartial from '../components/IconPartial.astro';
 import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 
@@ -78,28 +79,30 @@ const projects = (await getCollection('work'))
 					</CallToAction>
 				</div>
 			</section>
-/**
-			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
-					<p>
-						I have been fortunate enough to receive praise for my work in several publications. Take
-						a look below to learn more.
-					</p>
-				</header>
 
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-			</section> */
+	<section class="section with-background bg-variant">
+    <header class="section-header stack gap-2 lg:gap-4">
+        <h3>Skills</h3>
+        <p>
+      Explore my diverse skill set, ranging from Angular to React, and Symfony to NestJS. Proficient in TypeScript, PHP, and PostgreSQL, I leverage these technologies to create innovative solutions. My proficiency with GitHub ensures version control excellence. Dive into the world of my skills to witness the depth and breadth of my expertise.
+        </p>
+    </header>
+
+    <div class="gallery">
+        <Grid variant="small">
+            {
+                ['Angular', 'GitHub', 'Symfony', 'Php', 'NestJs','TypeScript','React','postgres'].map((brand, index) => (
+                    <li class="mention-card" style={{ backgroundImage: `url('/assets/${brand.toLowerCase()}-bg.jpg')` }}>
+                       
+                    </li>
+                ))
+            }
+        </Grid>
+    </div>
+</section>
+		
+
+
 		</main>
 
 		<ContactCTA />
@@ -230,23 +233,25 @@ const projects = (await getCollection('work'))
 
 	/* ====================================================== */
 
-	.mention-card {
-		display: flex;
-		height: 7rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		border: 1px solid var(--gray-800);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
-		background: var(--gradient-subtle);
-		box-shadow: var(--shadow-sm);
-	}
+.mention-card {
+    display: flex;
+    height: 7rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--gray-800);
+    border-radius: 35.5rem;
+    color: var(--gray-300);
+    background-image: url('/assets/angular.jpg'); /* Use the correct path to your image file */
+    background-size: cover;
+    background-repeat:round;
+    box-shadow: var(--shadow-sm);
+}
 
 	@media (min-width: 50em) {
 		.mention-card {
-			border-radius: 1.5rem;
-			height: 9.5rem;
+			border-radius: 20.5rem;
+			height: 20.5rem;
 		}
 	}
 </style>
